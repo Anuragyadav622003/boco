@@ -1,12 +1,9 @@
 import React,{useState} from 'react'
 import { FaArrowLeft } from 'react-icons/fa';
-<<<<<<< HEAD
-import {Link} from 'react-router-dom'
-import storeBanner from "./assets/storeBanner.png";
-=======
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
->>>>>>> 89bde4049aa4dfd0f1e031d3dd37b681772e7b8c
+import {Link} from 'react-router-dom'
+
+
 import store2 from "./assets/store2.png";
 import store3 from './assets/store3.png';
 import store4 from './assets/store4.png';
