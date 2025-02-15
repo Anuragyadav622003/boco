@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { FaArrowLeft } from 'react-icons/fa';
-
+import {Link} from 'react-router-dom'
 import storeBanner from "./assets/storeBanner.png";
 import store2 from "./assets/store2.png";
 import store3 from './assets/store3.png';
@@ -102,12 +102,12 @@ const caseStudies = [
         Audit My Website
       </button>
        {/* Contact Button */}
-       <button  className="bg-indigo-900 text-white flex items-center p-2 rounded-full">
+       <Link to="/contact" className="bg-indigo-900 text-white flex items-center p-2 rounded-full">
           <div className="px-6 font-bold hidden md:flex">Talk to Us</div>
           <div className="bg-indigo-900 md:bg-white rounded-full w-10 h-10 flex items-center justify-center">
             <FaArrowLeft className="text-white md:text-indigo-950 rotate-135" />
           </div>
-        </button>
+        </Link>
     </div>
 
     {/* Website Preview Section */}
@@ -173,7 +173,7 @@ const caseStudies = [
           </div>
         ))}
       </div>
-      <button className="mt-8 px-6  py-2  font-semibold rounded-lg   border rounded-full transition">Explore Case Studies</button>
+      <button className="mt-8 px-6  py-2  font-semibold    border rounded-full transition">Explore Case Studies</button>
     </div>
 
     <div className="flex flex-col md:flex-row items-center bg-white py-20 px-12 md:px-24">
@@ -237,12 +237,12 @@ const caseStudies = [
       
       {/* Call to Action Button */}
   <div className='flex justify-center mt-10'>
-      <button  className="bg-indigo-900 text-white flex items-center p-2 rounded-full  ">
-          <div className="px-6 font-bold hidden md:flex">Talk to Us</div>
-          <div className="bg-indigo-900 md:bg-white rounded-full w-10 h-10 flex items-center justify-center">
-            <FaArrowLeft className="text-white md:text-indigo-950 rotate-135" />
-          </div>
-        </button>
+     <Link to="/contact" className="bg-indigo-900 text-white flex items-center p-2 rounded-full">
+              <div className="px-6 font-bold hidden md:flex">Talk to Us</div>
+              <div className="bg-indigo-900 md:bg-white rounded-full w-10 h-10 flex items-center justify-center">
+                <FaArrowLeft className="text-white md:text-indigo-950 rotate-135" />
+              </div>
+            </Link>
         
         </div>
     </div>

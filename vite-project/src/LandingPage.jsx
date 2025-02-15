@@ -11,35 +11,77 @@ import lp5 from './assets/lp5.png';
 import lp6 from './assets/lp6.png';
 import lp7 from './assets/lp7.png';
 import lp8 from './assets/lp8.png';
-import banner3 from './assets/banner1.png';
-import banner4 from './assets/banner2.png';
-import banner5 from './assets/banner3.png';
-import banner6 from './assets/banner4.png';
-import banner7 from './assets/banner5.png';
-import banner8 from './assets/banner6.png';
-
+import banner3 from './assets/banner3.png';
+import banner4 from './assets/banner4.png';
+import banner5 from './assets/banner5.png';
+import banner6 from './assets/banner6.png';
+import banner7 from './assets/banner7.png';
+import banner8 from './assets/banner8.png';
+import banner9 from './assets/banner9.png';
+import banner10 from './assets/banner10.png';
+import banner11 from './assets/banner11.png';
+import banner12 from './assets/banner12.png';
 
 import LandingPageBanner from './assets/banner1.png';
 import banner2 from './assets/banner2.png';
 const LandingPage = () => {
 
 const images = [
-  // banner3,banner4,
+   banner3,
+   banner4,
   banner5,banner6,banner7,banner8,
+  banner9,banner10,banner11
+
  
 ];
+const [openIndex, setOpenIndex] = useState(null);
+
+const toggleFAQ = (index) => {
+  setOpenIndex(openIndex === index ? null : index);
+};
 const [currentIndex, setCurrentIndex] = useState(0);
 const totalSlides = images.length;
 
 const nextSlide = () => {
-  setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  if(currentIndex < totalSlides-1)
+  setCurrentIndex((prev) => (prev + 1));
 };
 
 const prevSlide = () => {
-  setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  if(currentIndex > 0)
+  setCurrentIndex((prev) => (prev - 1));
 };
 
   const companies = [lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8];
+
+
+  const faqs = [
+    {
+      question: "How long does it take to build a landing page?",
+      answer:
+        "Typically, a Landing Page takes around 2–3 weeks to complete, depending on specific requirements and revisions. If there are technical limitations, it may vary.",
+    },
+    {
+      question: "Will the landing page be mobile-friendly?",
+      answer:
+        "Absolutely! We design every landing page to be fully responsive, ensuring an optimal experience on both mobile and desktop devices.",
+    },
+    {
+      question: "What kind of results can I expect?",
+      answer:
+        "Our landing pages are designed to maximize conversions and improve AOV, helping drive more engagement and enhance your overall Marketing ROI.",
+    },
+    {
+      question: "What makes your landing pages different from others?",
+      answer:
+        "We combine data-driven insights, compelling design, and conversion-focused strategies to create landing pages tailored specifically to your audience and offer goals.",
+    },
+    {
+      question: "Can I make changes to the landing page after it’s live?",
+      answer:
+        "Yes, we offer flexibility for future updates. You can easily make changes through Shopify, and our team is available to support any major updates or optimization needs.",
+    },
+  ];
 
   return (
     <div className="bg-white text-center p-10 font-sans">
@@ -52,7 +94,12 @@ const prevSlide = () => {
       </p>
       <div className="mt-6 flex justify-center gap-4">
         <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold">Book a Call</button>
-        <button className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg font-semibold">Talk to Us</button>
+        <Link to="/contact" className="bg-indigo-900 text-white flex items-center p-2 rounded-full">
+          <div className="px-6 font-bold hidden md:flex">Talk to Us</div>
+          <div className="bg-indigo-900 md:bg-white rounded-full w-10 h-10 flex items-center justify-center">
+            <FaArrowLeft className="text-white md:text-indigo-950 rotate-135" />
+          </div>
+        </Link>
       </div>
 
       {/* Mockup Section (Single Image) */}
@@ -130,7 +177,7 @@ const prevSlide = () => {
       <div className="relative w-full max-w-5xl flex items-center justify-center overflow-hidden">
         <button
           onClick={prevSlide}
-          className="absolute left-4 p-3 bg-white shadow-md rounded-full z-10"
+          className="absolute  bottom-10 left-4 p-3 bg-gray-200 shadow-md rounded-full z-10"
         >
           <ChevronLeft size={32} />
         </button>
@@ -146,23 +193,62 @@ const prevSlide = () => {
                 key={index}
                 src={src}
                 alt="Mockup"
-                className="w-60 h-auto rounded-lg transition-transform duration-500"
+                className="w-60 h-auto rounded-lg transition-transform duration-500 "
               />
             ))}
           </motion.div>
         </div>
         <button
           onClick={nextSlide}
-          className="absolute right-4 p-3 bg-white shadow-md rounded-full z-10"
+          className="absolute bottom-10 bg-gray-200 right-4 p-3  shadow-md rounded-full z-10"
         >
           <ChevronRight size={32} />
         </button>
       </div>
-      <button className="mt-6 px-6 py-3 text-lg">Explore Case Studies</button>
+      <button className="mt-6 px-6 py-3 text-lg border rounded-full border-gray-200">Explore Case Studies</button>
     </div>
 
+    <div className="max-w-3xl mx-auto py-10">
+      <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+        Frequently Asked Questions
+      </h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border border-gray-200 rounded-xl bg-purple-100 p-4">
+            <button
+              className="flex justify-between w-full text-lg font-medium text-gray-900"
+              onClick={() => toggleFAQ(index)}
+            >
+              {faq.question}
+              <span className={`transition-transform ${openIndex === index ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+           
+            {openIndex === index && (
+              <>
+               <hr className='text-gray-400'/>
+              <p className="mt-2 text-gray-700  text-left">{faq.answer}</p>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+    <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
+    <hr className="w-3/4 border-t mb-10" />
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0a0a32] mb-6">
+        Have questions about your landing page needs?
+      </h2>
+      <Link to="/contact" className="bg-indigo-900 text-white flex items-center p-2 rounded-full">
+          <div className="px-6 font-bold hidden md:flex">Talk to Us</div>
+          <div className="bg-indigo-900 md:bg-white rounded-full w-10 h-10 flex items-center justify-center">
+            <FaArrowLeft className="text-white md:text-indigo-950 rotate-135" />
+          </div>
+        </Link>
 
-
+      <hr className="w-3/4 border-t mt-10" />
+    </div>
     </div>
   )
 }
