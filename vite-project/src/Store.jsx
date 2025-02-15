@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { FaArrowLeft } from 'react-icons/fa';
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+
 import storeBanner from "./assets/storeBanner.png";
 import store2 from "./assets/store2.png";
 import store3 from './assets/store3.png';
