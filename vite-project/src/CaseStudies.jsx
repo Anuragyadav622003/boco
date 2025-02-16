@@ -1,5 +1,6 @@
 import React from "react";
-
+import f2 from  "./assets/f2.png";
+import f1 from  "./assets/f1.png";
 const CaseStudies = () => {
   return (
     <div className="bg-white py-12 px-6 md:px-16">
@@ -16,7 +17,7 @@ const CaseStudies = () => {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-300 text-black mt-9 text-center py-1 px-3 rounded-full">
             Fashion
           </div>
-          <img src="../src/assets/f1.png" alt="Fashion Case Study" className="w-full rounded-2xl mt-6" />
+          <img src={f1} alt="Fashion Case Study" className="w-full rounded-2xl mt-6" />
           <h3 className="text-xl font-semibold mt-4 text-black">
             Stylish Wodrobe saw a 3X growth in revenue within 90 days of revamp
           </h3>
@@ -45,7 +46,7 @@ const CaseStudies = () => {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-300 text-black mt-8 text-center py-1 px-3 rounded-full">
             Health & Wellness
           </div>
-          <img src="../src/assets/f2.png" alt="Health & Wellness Case Study" className="w-full rounded-2xl mt-6" />
+          <img src={f2} alt="Health & Wellness Case Study" className="w-full rounded-2xl mt-6" />
           <h3 className="text-xl font-semibold mt-4 text-black">
             Store Revamp for The Good Leaf doubles Revenue & Boosts Conversions by 40%
           </h3>
