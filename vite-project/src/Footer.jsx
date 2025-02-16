@@ -30,7 +30,7 @@ const Footer = () => {
       </div>
 
       {/* Divider and Copyright */}
-      <div className="mt-8 border-t border-gray-300 pt-4 text-center text-gray-500 text-sm">
+      <div className="mt-8 border-t border-dashed border-gray-300 pt-4 text-center text-gray-500 text-sm">
         © Copyright, BOCO 2024
       </div>
     </footer>

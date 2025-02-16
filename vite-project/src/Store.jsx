@@ -8,6 +8,9 @@ import store3 from './assets/store3.png';
 import store4 from './assets/store4.png';
 import store5 from './assets/store5.png';
 import store6 from './assets/store6.png';
+import c1 from  './assets/c1.png';
+import c2 from  './assets/c2.png';
+import c3 from  './assets/c3.png';
 
 const Store = () => {
 
@@ -44,19 +47,19 @@ const Store = () => {
       title: "Built for High Conversion Rate",
       description:
         "Our Core Focus for building any website is to ensure it reaches and outperforms Conversion Rate benchmarks.",
-      icon: "📊", // Replace with actual icon component
+      icon: c1, // Replace with actual icon component
     },
     {
       title: "Lightning Fast & Visually Stable",
       description:
         "All our websites follow market-leading benchmarks for Speed and Stability, ensuring user engagement & enhanced conversions.",
-      icon: "⚡", // Replace with actual icon component
+      icon:c2, // Replace with actual icon component
     },
     {
       title: "Timelines & Budgets On Track",
       description:
         "We have a well-structured process: Strategy, Design & Development with phase-wise updates to ensure milestones are met on time.",
-      icon: "📅", // Replace with actual icon component
+      icon: c3, // Replace with actual icon component
     },
   ];
 
@@ -126,7 +129,7 @@ const caseStudies = [
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
         {features.map((feature, index) => (
           <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">
-            <div className="text-4xl mb-4">{feature.icon}</div>
+            <img src={feature.icon} alt='#' className="w-24 mb-4"/>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
             <p className="text-gray-600 text-sm">{feature.description}</p>
           </div>

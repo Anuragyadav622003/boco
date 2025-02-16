@@ -17,11 +17,35 @@ import img3 from "./assets/img3.png";
 import img4 from "./assets/img4.png";
 import img5 from "./assets/img5.png";
 import img6 from "./assets/img6.png";
+import c1 from  './assets/c1.png';
+import c2 from  './assets/c2.png';
+import c3 from  './assets/c3.png';
 import { Link } from "react-router-dom";
 import h1 from './assets/h1.png'
+import CaseStudies from "./CaseStudies";
 const Home = () => {
   const companies = [lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8];
   const images = [img1, img2, img3, img4, img5, img6];
+    const features = [
+      {
+        title: "Built for High Conversion Rate",
+        description:
+          "Our Core Focus for building any website is to ensure it reaches and outperforms Conversion Rate benchmarks.",
+        icon: c1, // Replace with actual icon component
+      },
+      {
+        title: "Lightning Fast & Visually Stable",
+        description:
+          "All our websites follow market-leading benchmarks for Speed and Stability, ensuring user engagement & enhanced conversions.",
+        icon:c2, // Replace with actual icon component
+      },
+      {
+        title: "Timelines & Budgets On Track",
+        description:
+          "We have a well-structured process: Strategy, Design & Development with phase-wise updates to ensure milestones are met on time.",
+        icon: c3, // Replace with actual icon component
+      },
+    ];
   return (
     <>
       {/* Main Section */}
@@ -119,6 +143,28 @@ const Home = () => {
         ))}
       </div>
     </div>
+
+ {/*card section*/}
+ <div className="  py-12 px-6 bg-purple-50">
+ <p className="text-xl text-center font-bold">Enhance customer experience
+ by focusing on the details that matters most</p>
+ <div className=" py-12 px-6 flex justify-center  ">
+ 
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
+        {features.map((feature, index) => (
+          <div key={index} className="bg-white p-6 rounded-xl shadow-md ">
+            <img src={feature.icon} alt='#' className="w-24 mb-4"/>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+            <p className="text-gray-600 text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
+
+
+<CaseStudies/>
+
       </div>
     </>
   );
