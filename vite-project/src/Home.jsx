@@ -18,6 +18,7 @@ import img4 from "./assets/img4.png";
 import img5 from "./assets/img5.png";
 import img6 from "./assets/img6.png";
 import { Link } from "react-router-dom";
+import h1 from './assets/h1.png'
 const Home = () => {
   const companies = [lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8];
   const images = [img1, img2, img3, img4, img5, img6];
@@ -67,7 +68,7 @@ const Home = () => {
         {/* Right Side (Image, but on top in small screens) */}
         <div className="w-full md:w-3/4 flex justify-center">
           <img
-            src="/src/assets/h1.png"
+            src={h1}
             alt="Shopify Store Preview"
             className="w-full max-w-md"
           />
